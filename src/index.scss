@@ -1,0 +1,16 @@
+@import "./assets/styles/base/reset.scss";
+@import "./assets/styles/base/fonts.scss";
+@import "./assets/styles/utils/variables.scss";
+@import "./assets/styles/utils/mixins.scss";
+
+body {
+  margin: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}

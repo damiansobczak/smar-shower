@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.scss";
+import Header from "./components/Header/Header";
+import LeftPanel from "./components/LeftPanel/LeftPanel";
+import Logout from "./components/Logout/Logout";
+import Pressure from "./components/Pressure/Pressure";
+import Temperature from "./components/Temperature/Temperature";
+import { useSelector, useDispatch } from "react-redux";
+import { IState } from "./reducers/themeReducer";
 
 function App() {
+  const state = useSelector((state: IState) => state.isDark);
+  const dispatch = useDispatch();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`app ${state ? "app--dark" : ""}`}>
+      <main className="app__dialog">
+        <Header />
+        <Logout />
+        <LeftPanel />
+        <Temperature />
+        <Pressure />
+        <button onClick={() => dispatch({ type: "TOGGLE" })}>Toggle</button>
+      </main>
     </div>
   );
 }
