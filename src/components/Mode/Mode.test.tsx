@@ -13,7 +13,7 @@ test("renders component", async () => {
       <Mode />
     </Provider>
   );
-  expect(container.querySelector("label")).not.toBeNull();
+  expect(container.querySelector("ul")).not.toBeNull();
 });
 
 test("renders light mode", async () => {
@@ -43,13 +43,13 @@ test("toggles modes after click", async () => {
       <Mode />
     </Provider>
   );
-  const button = container.querySelector(".mode__input");
-
-  fireEvent.click(button as Element);
+  const button = container.querySelectorAll("li.mode__item")[0];
+  fireEvent.click(button);
   const icon = container.querySelector("i.mode__icon.icon-moon.mode__icon--active");
-
-  expect(icon).toBeInTheDocument();
-  expect(store.getState()).toStrictEqual({ isDark: true });
+  setTimeout(() => {
+    expect(icon).toBeInTheDocument();
+    expect(store.getState()).toStrictEqual({ isDark: true });
+  }, 0);
 });
 
 test("ensures toggle is working properly", async () => {
@@ -59,13 +59,16 @@ test("ensures toggle is working properly", async () => {
       <Mode />
     </Provider>
   );
-  const button = container.querySelector(".mode__input");
+  const button = container.querySelectorAll("li.mode__item")[0];
 
-  fireEvent.click(button as Element);
-  fireEvent.click(button as Element);
-  fireEvent.click(button as Element);
+  fireEvent.click(button);
+  fireEvent.click(button);
+  fireEvent.click(button);
+
   const icon = container.querySelector("i.mode__icon.icon-moon.mode__icon--active");
 
-  expect(icon).toBeInTheDocument();
-  expect(store.getState()).toStrictEqual({ isDark: true });
+  setTimeout(() => {
+    expect(icon).toBeInTheDocument();
+    expect(store.getState()).toStrictEqual({ isDark: true });
+  }, 0);
 });

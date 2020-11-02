@@ -6,13 +6,17 @@ export interface IState {
 
 export const themeInitialState = { isDark: false };
 
-type ACTIONTYPE = { type: "TOGGLE" };
+type ACTIONTYPE = { type: "DARK" } | { type: "LIGHT" };
 
 export const themeReducer: Reducer<IState, ACTIONTYPE> = (state = themeInitialState, action) => {
   switch (action.type) {
-    case "TOGGLE":
+    case "DARK":
       return {
-        isDark: !state.isDark,
+        isDark: true,
+      };
+    case "LIGHT":
+      return {
+        isDark: false,
       };
     default:
       return state;

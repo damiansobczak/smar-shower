@@ -7,11 +7,28 @@ export default function Mode() {
   const state = useSelector((state: IState) => state.isDark);
   const dispatch = useDispatch();
 
+  const setToLight = (e: React.SyntheticEvent | React.KeyboardEvent) => {
+    if (("key" in e && e.key === "Enter") || e.type === "click") {
+      dispatch({ type: "LIGHT" });
+    }
+    e.stopPropagation();
+  };
+
+  const setToDark = (e: React.SyntheticEvent | React.KeyboardEvent) => {
+    if (("key" in e && e.key === "Enter") || e.type === "click") {
+      dispatch({ type: "DARK" });
+    }
+    e.stopPropagation();
+  };
+
   return (
-    <label htmlFor="mode" className="mode">
-      <input type="checkbox" className="mode__input" name="mode" id="mode" onChange={() => dispatch({ type: "TOGGLE" })} />
-      <i className={`mode__icon icon-sun ${!state ? "mode__icon--active" : ""}`}></i>
-      <i className={`mode__icon icon-moon ${state ? "mode__icon--active" : ""}`}></i>
-    </label>
+    <ul id="mode" className="mode" role="radiogroup" aria-label="Theme mode">
+      <li id="mode__item" className="mode__item" role="radio" aria-checked={state ? false : true} onClick={setToLight} onKeyPress={setToLight} tabIndex={0}>
+        <i className={`mode__icon icon-sun ${!state ? "mode__icon--active" : ""}`}></i>
+      </li>
+      <li id="mode__item" className="mode__item" role="radio" aria-checked={state ? true : false} onClick={setToDark} onKeyPress={setToDark} tabIndex={0}>
+        <i className={`mode__icon icon-moon ${state ? "mode__icon--active" : ""}`}></i>
+      </li>
+    </ul>
   );
 }

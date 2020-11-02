@@ -15,6 +15,16 @@
     display: none;
   }
 
+  &__item {
+    &:focus {
+      height: 46px;
+      width: 46px;
+      border-radius: 50%;
+      outline: 0;
+      box-shadow: 0 0 0 2px var(--color-focus);
+    }
+  }
+
   &__icon {
     background-color: var(--color-mode-item-bg);
     color: var(--color-mode-item-text);
