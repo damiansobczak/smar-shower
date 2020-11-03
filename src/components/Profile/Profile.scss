@@ -1,9 +1,8 @@
 @import "../../assets/styles/utils/variables";
 @import "../../assets/styles/utils/mixins";
 
-.nav {
-  &__items {
-    display: flex;
-    align-items: center;
-  }
+.profile {
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
 }
