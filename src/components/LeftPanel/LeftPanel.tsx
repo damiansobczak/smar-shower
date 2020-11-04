@@ -1,5 +1,6 @@
 import React from "react";
 import Presets from "../Presets/Presets";
+import Weather from "../Weather/Weather";
 import "./LeftPanel.scss";
 
 class LeftPanel extends React.Component {
@@ -7,6 +8,7 @@ class LeftPanel extends React.Component {
     return (
       <aside className="leftPanel">
         <Presets />
+        <Weather />
       </aside>
     );
   }

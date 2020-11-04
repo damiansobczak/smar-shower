@@ -4,6 +4,7 @@
   --color-text-secondary: #a7b1c3;
 
   --color-blue: #0090f2;
+  --color-yellow: #ffc84c;
 
   --color-focus: #0090f2;
 
@@ -27,8 +28,13 @@
   --color-logout-bg: #eff0f7;
 
   --color-presets-bg: #0b111e;
+  --color-presets-title: #171c26;
   --color-presets-text: #171c26;
   --color-presets-text-active: #fff;
+
+  --color-weather-bg: #eff0f7;
+  --color-weather-title: #171c26;
+  --color-weather-day: #171c26;
 }
 
 .app.app--dark {
@@ -54,7 +60,12 @@
   --color-logout-bg: #1b2231;
 
   --color-presets-bg: #0b111e;
+  --color-presets-title: #fff;
   --color-presets-text: #7f8da7;
+
+  --color-weather-bg: #1c222c;
+  --color-weather-title: #fff;
+  --color-weather-day: #fff;
 }
 
 $font-100: 0.7059rem;

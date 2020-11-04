@@ -1,0 +1,73 @@
+@import "../../assets/styles/utils/variables";
+@import "../../assets/styles/utils/mixins";
+
+.weather {
+  &__container {
+    display: flex;
+    align-items: stretch;
+    background-color: var(--color-weather-bg);
+    border-radius: 10px;
+    padding: 24px;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  &__header {
+    margin: 24px 0 16px;
+  }
+
+  &__title {
+    color: var(--color-presets-title);
+    transition: color 0.2s ease-in-out;
+  }
+
+  &__column {
+    display: flex;
+    flex-wrap: wrap;
+
+    &--right {
+      justify-content: center;
+      margin-left: auto;
+    }
+  }
+
+  &__day {
+    display: inline-block;
+    color: var(--color-weather-day);
+    font-weight: 600;
+    font-size: 2.5rem;
+    transition: color 0.2s ease-in-out;
+  }
+
+  &__unit {
+    font-size: $font-300;
+    vertical-align: super;
+  }
+
+  &__night {
+    color: var(--color-text-secondary);
+    padding-top: 20px;
+    padding-left: 12px;
+    transition: color 0.2s ease-in-out;
+  }
+
+  &__date {
+    margin-top: auto;
+    color: var(--color-text-secondary);
+    transition: color 0.2s ease-in-out;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    flex-basis: 100%;
+    color: var(--color-yellow);
+    margin-bottom: 24px;
+  }
+
+  &__desc {
+    color: var(--color-text-secondary);
+    transition: color 0.2s ease-in-out;
+  }
+}

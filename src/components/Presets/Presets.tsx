@@ -8,7 +8,9 @@ export default function Presets() {
   return (
     <div className="presets" aria-labelledby="presets-title">
       <div className="presets__header">
-        <p id="presets-title">Shower presets</p>
+        <p className="presets__title" id="presets-title">
+          Shower presets
+        </p>
         <button className="presets__add">+ Add presets</button>
       </div>
       <ul className="presets__items" aria-label="Presets items">
@@ -19,7 +21,7 @@ export default function Presets() {
               <span id="presets-name" className="presets__name">
                 {name}
               </span>
-              <div className="presets__temperature">{temperature}C</div>
+              <div className="presets__temperature">{temperature}&#176;C</div>
               <div className="presets__pressure">{pressure}%</div>
             </button>
           </li>

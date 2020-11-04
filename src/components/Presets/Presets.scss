@@ -9,10 +9,20 @@
     margin-bottom: 16px;
   }
 
+  &__title {
+    color: var(--color-presets-title);
+    transition: color 0.2s ease-in-out;
+  }
+
   &__add {
     font-size: $font-200;
     color: var(--color-blue);
+    border-radius: 4px;
     cursor: pointer;
+
+    &:focus {
+      box-shadow: 0 0 0 2px var(--color-focus);
+    }
   }
 
   &__list {
