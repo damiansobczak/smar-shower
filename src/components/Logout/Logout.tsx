@@ -3,8 +3,10 @@ import "./Logout.scss";
 
 export default function Logout() {
   return (
-    <button className="logout">
-      <i className="icon-power-off"></i>
-    </button>
+    <div className="logout">
+      <button className="logout__btn">
+        <i className="icon-power-off"></i>
+      </button>
+    </div>
   );
 }

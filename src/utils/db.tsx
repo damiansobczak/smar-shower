@@ -25,3 +25,34 @@ export const NavItems = [
     icon: "user",
   },
 ];
+
+export const PresetsItems = [
+  {
+    id: 0,
+    name: "Morning shower",
+    icon: "shower",
+    temperature: 48,
+    pressure: 80,
+  },
+  {
+    id: 1,
+    name: "Morning shower",
+    icon: "shower",
+    temperature: 48,
+    pressure: 80,
+  },
+  {
+    id: 2,
+    name: "Morning shower",
+    icon: "shower",
+    temperature: 48,
+    pressure: 80,
+  },
+  {
+    id: 3,
+    name: "Morning shower",
+    icon: "shower",
+    temperature: 48,
+    pressure: 80,
+  },
+];
