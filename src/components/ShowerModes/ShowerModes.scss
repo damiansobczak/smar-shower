@@ -1,0 +1,61 @@
+@import "../../assets/styles/utils/variables";
+@import "../../assets/styles/utils/mixins";
+
+.shower-modes {
+  &__title {
+    color: var(--color-shower-modes-title);
+    margin: 24px 0 16px;
+    transition: color 0.2s ease-in-out;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    margin-right: 16px;
+
+    &--active {
+      .shower-modes__btn {
+        background-color: var(--color-shower-modes-bg-active);
+      }
+      .shower-modes__icon {
+        color: var(--color-shower-modes-icon-active);
+      }
+    }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid var(--color-borders);
+    width: 140px;
+    height: 140px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: var(--color-shower-modes-bg-hover);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px var(--color-focus);
+    }
+  }
+
+  &__icon {
+    font-size: 2rem;
+    color: var(--color-shower-modes-icon);
+    margin-bottom: 16px;
+    transition: color 0.2s ease-in-out;
+  }
+
+  &__name {
+    color: var(--color-shower-modes-name);
+    transition: color 0.2s ease-in-out;
+  }
+}

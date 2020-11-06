@@ -1,10 +1,10 @@
 import React from "react";
 import "./Mode.scss";
 import { useSelector, useDispatch } from "react-redux";
-import { IState } from "../../reducers/themeReducer";
+import { IRootReducer } from "../../redux/reducer";
 
 export default function Mode() {
-  const state = useSelector((state: IState) => state.isDark);
+  const state = useSelector((state: IRootReducer) => state.theme.isDark);
   const dispatch = useDispatch();
 
   return (

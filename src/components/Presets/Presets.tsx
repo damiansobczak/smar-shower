@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Presets.scss";
-import { PresetsItems } from "../../utils/db";
+import { connect } from "react-redux";
+import { IRootReducer } from "../../redux/reducer";
+import { IPresets } from "./IPresets";
 
-export default function Presets() {
-  const [active, setActive] = useState<number>(0);
-
+function Presets({ active, presets, setActive }: IPresets) {
   return (
     <div className="presets" aria-labelledby="presets-title">
       <div className="presets__header">
@@ -14,7 +14,7 @@ export default function Presets() {
         <button className="presets__add">+ Add presets</button>
       </div>
       <ul className="presets__items" aria-label="Presets items">
-        {PresetsItems.map(({ id, icon, name, temperature, pressure }, index) => (
+        {presets.map(({ id, icon, name, temperature, pressure }) => (
           <li className={`presets__item ${id === active ? "presets__item--active" : ""}`} key={id}>
             <button className="presets__btn" aria-labelledby="presets-name" onClick={() => setActive(id)}>
               <i className={`icon-${icon} presets__icon`}></i>
@@ -30,3 +30,18 @@ export default function Presets() {
     </div>
   );
 }
+
+const mapStateToProps = (state: IRootReducer) => {
+  return {
+    active: state.preset.active,
+    presets: state.preset.presets,
+  };
+};
+
+const mapDispatchToProps = (dispatch: React.Dispatch<{ type: string; payload: number }>) => {
+  return {
+    setActive: (id: number) => dispatch({ type: "SET_PRESET", payload: id }),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Presets);

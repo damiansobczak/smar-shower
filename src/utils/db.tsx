@@ -26,6 +26,24 @@ export const NavItems = [
   },
 ];
 
+export const Showers = [
+  {
+    id: 0,
+    name: "Main",
+    icon: "shower-squshed",
+  },
+  {
+    id: 1,
+    name: "Top",
+    icon: "shower",
+  },
+  {
+    id: 2,
+    name: "Side",
+    icon: "shower-side",
+  },
+];
+
 export const PresetsItems = [
   {
     id: 0,
@@ -33,6 +51,7 @@ export const PresetsItems = [
     icon: "shower-squshed",
     temperature: 49,
     pressure: 80,
+    shower: 0,
   },
   {
     id: 1,
@@ -40,6 +59,7 @@ export const PresetsItems = [
     icon: "shower",
     temperature: 48,
     pressure: 60,
+    shower: 0,
   },
   {
     id: 2,
@@ -47,6 +67,7 @@ export const PresetsItems = [
     icon: "shower-side",
     temperature: 50,
     pressure: 80,
+    shower: 0,
   },
   {
     id: 3,
@@ -54,5 +75,6 @@ export const PresetsItems = [
     icon: "shower",
     temperature: 42,
     pressure: 50,
+    shower: 0,
   },
 ];

@@ -4,18 +4,19 @@ import Header from "./components/Header/Header";
 import LeftPanel from "./components/LeftPanel/LeftPanel";
 import Logout from "./components/Logout/Logout";
 import Pressure from "./components/Pressure/Pressure";
-import Temperature from "./components/Temperature/Temperature";
 import { useSelector } from "react-redux";
-import { IState } from "./reducers/themeReducer";
+import { IRootReducer } from "./redux/reducer";
+import MainPanel from "./components/MainPanel/MainPanel";
+
 function App() {
-  const state = useSelector((state: IState) => state.isDark);
+  const state = useSelector((state: IRootReducer) => state.theme.isDark);
   return (
     <div className={`app ${state ? "app--dark" : ""}`}>
       <main className="app__dialog">
         <Header />
         <Logout />
         <LeftPanel />
-        <Temperature />
+        <MainPanel />
         <Pressure />
       </main>
     </div>

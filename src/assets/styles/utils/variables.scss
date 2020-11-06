@@ -35,6 +35,13 @@
   --color-weather-bg: #eff0f7;
   --color-weather-title: #171c26;
   --color-weather-day: #171c26;
+
+  --color-shower-modes-title: #171c26;
+  --color-shower-modes-icon: #171c26;
+  --color-shower-modes-icon-active: #fff;
+  --color-shower-modes-name: #7f8da7;
+  --color-shower-modes-bg-hover: #eff0f7;
+  --color-shower-modes-bg-active: #0b111e;
 }
 
 .app.app--dark {
@@ -66,6 +73,12 @@
   --color-weather-bg: #1c222c;
   --color-weather-title: #fff;
   --color-weather-day: #fff;
+
+  --color-shower-modes-title: #fff;
+  --color-shower-modes-icon: #fff;
+  --color-shower-modes-name: #7f8da7;
+  --color-shower-modes-bg-hover: #0b111e;
+  --color-shower-modes-bg-active: #0b111e;
 }
 
 $font-100: 0.7059rem;
