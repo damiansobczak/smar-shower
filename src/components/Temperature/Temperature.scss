@@ -1,2 +1,37 @@
 @import "../../assets/styles/utils/variables";
 @import "../../assets/styles/utils/mixins";
+
+.temperature {
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-blue);
+    font-size: 2rem;
+    height: 40px;
+    width: 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      border: 1px solid var(--color-borders);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px var(--color-focus);
+    }
+  }
+
+  &__name {
+    font-size: 1.2rem;
+    color: var(--color-temperature-name);
+    margin: 0 24px;
+  }
+}
