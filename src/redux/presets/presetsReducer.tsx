@@ -1,14 +1,16 @@
 import { Reducer } from "redux";
-import { PresetsItems } from "../../utils/db";
+import { IPresetItem, PresetsItems, Showers } from "../../utils/db";
 
 export interface IState {
   active: number | null;
   presets: Array<any>;
+  modes: Array<any>;
 }
 
 export const presetInitialState = {
   active: 0,
   presets: PresetsItems,
+  modes: Showers,
 };
 
 type ACTIONTYPE =
@@ -32,7 +34,7 @@ export const presetsReducer: Reducer<IState, ACTIONTYPE> = (state = presetInitia
         active: action.payload,
       };
     case "SET_PRESET_SHOWER":
-      const presets = state.presets.map((preset: any) => {
+      const presets = state.presets.map((preset: IPresetItem) => {
         if (preset.id === action.payload.active) {
           preset.shower = action.payload.id;
         }

@@ -19,6 +19,11 @@
     &--active {
       .shower-modes__btn {
         background-color: var(--color-shower-modes-bg-active);
+
+        &:hover {
+          background-color: var(--color-shower-modes-bg-active);
+          opacity: 0.8;
+        }
       }
       .shower-modes__icon {
         color: var(--color-shower-modes-icon-active);

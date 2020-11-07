@@ -1,6 +1,6 @@
 import React from "react";
 import "./ShowerModes.scss";
-import { Showers } from "../../utils/db";
+import { IShower, Showers } from "../../utils/db";
 import { connect } from "react-redux";
 import { IShowerModes } from "./IShowerModes";
 import { IRootReducer } from "../../redux/reducer";
@@ -14,7 +14,7 @@ function ShowerModes({ presets, active, setShower }: IShowerModes) {
         </p>
       </div>
       <ul className="shower-modes__list" aria-labelledby="shower-modes-title">
-        {Showers.map(({ id, name, icon }: any) => (
+        {Showers.map(({ id, name, icon }: IShower) => (
           <li className={`shower-modes__item ${presets[active].shower === id ? "shower-modes__item--active" : ""}`} key={id}>
             <button className="shower-modes__btn" aria-labelledby="shower-modes-name" onClick={() => setShower({ active, id })}>
               <i className={`shower-modes__icon icon-${icon}`}></i>
@@ -36,9 +36,9 @@ const mapStateToProps = (state: IRootReducer) => {
   };
 };
 
-const mapDispatchToProps = (dispatch: React.Dispatch<{ type: string; payload: any }>) => {
+const mapDispatchToProps = (dispatch: React.Dispatch<{ type: string; payload: { active: number; id: number } }>) => {
   return {
-    setShower: (payload: any) => dispatch({ type: "SET_PRESET_SHOWER", payload }),
+    setShower: (payload: { active: number; id: number }) => dispatch({ type: "SET_PRESET_SHOWER", payload }),
   };
 };
 

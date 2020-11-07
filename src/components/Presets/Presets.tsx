@@ -3,8 +3,9 @@ import "./Presets.scss";
 import { connect } from "react-redux";
 import { IRootReducer } from "../../redux/reducer";
 import { IPresets } from "./IPresets";
+import { IShower } from "../../utils/db";
 
-function Presets({ active, presets, setActive }: IPresets) {
+function Presets({ active, presets, modes, setActive }: IPresets) {
   return (
     <div className="presets" aria-labelledby="presets-title">
       <div className="presets__header">
@@ -14,10 +15,10 @@ function Presets({ active, presets, setActive }: IPresets) {
         <button className="presets__add">+ Add presets</button>
       </div>
       <ul className="presets__items" aria-label="Presets items">
-        {presets.map(({ id, icon, name, temperature, pressure }) => (
+        {presets.map(({ id, name, temperature, pressure, shower }) => (
           <li className={`presets__item ${id === active ? "presets__item--active" : ""}`} key={id}>
             <button className="presets__btn" aria-labelledby="presets-name" onClick={() => setActive(id)}>
-              <i className={`icon-${icon} presets__icon`}></i>
+              <i className={`icon-${modes.filter((mode: IShower) => mode.id === shower)[0].icon} presets__icon`}></i>
               <span id="presets-name" className="presets__name">
                 {name}
               </span>
@@ -35,6 +36,7 @@ const mapStateToProps = (state: IRootReducer) => {
   return {
     active: state.preset.active,
     presets: state.preset.presets,
+    modes: state.preset.modes,
   };
 };
 

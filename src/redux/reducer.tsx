@@ -10,6 +10,7 @@ export interface IRootReducer {
   preset: {
     active: number;
     presets: Array<any>;
+    modes: Array<any>;
   };
   nav: {
     active: number;

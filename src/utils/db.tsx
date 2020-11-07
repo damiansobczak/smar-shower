@@ -1,4 +1,12 @@
-export const NavItems = [
+export interface INavItem {
+  id: number;
+  name: string;
+  icon: string;
+}
+
+export interface INavItems extends Array<INavItem> {}
+
+export const NavItems: INavItems = [
   {
     id: 0,
     name: "Shower",
@@ -26,7 +34,15 @@ export const NavItems = [
   },
 ];
 
-export const Showers = [
+export interface IShower {
+  id: number;
+  name: string;
+  icon: string;
+}
+
+export interface IShowers extends Array<IShower> {}
+
+export const Showers: IShowers = [
   {
     id: 0,
     name: "Main",
@@ -44,11 +60,20 @@ export const Showers = [
   },
 ];
 
-export const PresetsItems = [
+export interface IPresetItem {
+  id: number;
+  name: string;
+  temperature: number;
+  pressure: number;
+  shower: number;
+}
+
+export interface IPresetItems extends Array<IPresetItem> {}
+
+export const PresetsItems: IPresetItems = [
   {
     id: 0,
     name: "Morning shower",
-    icon: "shower-squshed",
     temperature: 49,
     pressure: 80,
     shower: 0,
@@ -56,23 +81,20 @@ export const PresetsItems = [
   {
     id: 1,
     name: "Evening shower",
-    icon: "shower",
     temperature: 48,
     pressure: 60,
-    shower: 0,
+    shower: 2,
   },
   {
     id: 2,
     name: "Massage shower",
-    icon: "shower-side",
     temperature: 50,
     pressure: 80,
-    shower: 0,
+    shower: 1,
   },
   {
     id: 3,
     name: "Relax shower",
-    icon: "shower",
     temperature: 42,
     pressure: 50,
     shower: 0,
