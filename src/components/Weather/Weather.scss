@@ -2,6 +2,8 @@
 @import "../../assets/styles/utils/mixins";
 
 .weather {
+  margin-top: auto;
+
   &__container {
     display: flex;
     align-items: stretch;

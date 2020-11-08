@@ -32,7 +32,7 @@
   --color-presets-text: #171c26;
   --color-presets-text-active: #fff;
 
-  --color-weather-bg: #eff0f7;
+  --color-weather-bg: #f6f6f6;
   --color-weather-title: #171c26;
   --color-weather-day: #171c26;
 
@@ -44,6 +44,12 @@
   --color-shower-modes-bg-active: #0b111e;
 
   --color-temperature-name: #171c26;
+  --color-temperature-circle-back-bg: #f6f6f6;
+  --color-temperature-circle-middle-bg: #0b111e;
+  --color-temperature-circle-front-bg: #252930;
+
+  --color-temperature-path-star: #f6f6f6;
+  --color-temperature-path-line: #f0f0f0;
 }
 
 .app.app--dark {
@@ -83,6 +89,10 @@
   --color-shower-modes-bg-active: #0b111e;
 
   --color-temperature-name: #fff;
+  --color-temperature-circle-back-bg: #262c38;
+
+  --color-temperature-path-star: #262c38;
+  --color-temperature-path-line: #282c36;
 }
 
 $font-100: 0.7059rem;

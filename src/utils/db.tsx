@@ -99,4 +99,11 @@ export const PresetsItems: IPresetItems = [
     pressure: 50,
     shower: 0,
   },
+  {
+    id: 4,
+    name: "Sauna shower",
+    temperature: 42,
+    pressure: 50,
+    shower: 1,
+  },
 ];

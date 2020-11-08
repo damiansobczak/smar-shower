@@ -2,5 +2,7 @@
 @import "../../assets/styles/utils/mixins";
 
 .leftPanel {
+  display: flex;
+  flex-direction: column;
   padding: 30px;
 }
